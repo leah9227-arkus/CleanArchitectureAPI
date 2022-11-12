@@ -1,4 +1,5 @@
 using CleanArchitecture.Application;
+using CleanArchitecture.Incfrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +31,9 @@ namespace CleanArchitectureAPI
 
             // application
             services.AddApplication();
+
+            // infrastructure (injects the implementation required by application layer)
+            services.AddInfrastructure(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
